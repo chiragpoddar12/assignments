@@ -5,6 +5,20 @@
 */
 
 function isAnagram(str1, str2) {
+  var i;
+  str1 = str1.toUpperCase();
+  str2 = str2.toUpperCase();
+  for(i=0; i<str2.length; i++){
+    if(str1.includes(str2[i])){
+      str1 = str1.replace(str2[i], '');
+    }else{
+      return false;
+    }
+  }
+
+  if(str1.length > 0)
+      return false;
+  return true;
 
 }
 
